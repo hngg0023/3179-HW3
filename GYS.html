@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+</head>
+<body>
+  
+<div id="choropleth_map"></div>
+
+<script type="text/javascript">
+
+  var var1 = "GYS_Map.json";
+  vegaEmbed('#choropleth_map', var1).then(function(result) {}).catch(console.error);
+
+</script>
+
+<div id="stacked_bar_chart"></div>
+
+<script type="text/javascript">
+
+  var var2 = "GYS_Bar.json";
+  vegaEmbed('#stacked_bar_chart', var2).then(function(result) {}).catch(console.error);
+
+</script>
+
+<div id="pie_chart"></div>
+
+<script type="text/javascript">
+
+  var var3 = "GYS_Pie.json";
+  vegaEmbed('#pie_chart', var3).then(function(result) {}).catch(console.error);
+
+</script>
+
+</script>
+
+<div id="line_graph"></div>
+
+<script type="text/javascript">
+
+  var var4 = "GYS_line.json";
+  vegaEmbed('#line_graph', var4).then(function(result) {}).catch(console.error);
+
+</script>
+
+</body>
+</html>

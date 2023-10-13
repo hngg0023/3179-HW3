@@ -1,0 +1,16 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Subscribers in Each Channel",
+    "width" : 700,
+    "height": 400,
+    "data": {"url": "https://raw.githubusercontent.com/hngg0023/3179-HW3/main/Global_YouTube_Statistics.csv"},
+    "mark": {
+      "type": "line",
+      "point": true
+    },
+    "encoding": {
+      "x": {"field": "channel_type", "type": "nominal"},
+      "y": {"field": "subscribers", "type": "quantitative"}
+    }
+  }
+  

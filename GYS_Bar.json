@@ -1,29 +1,22 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title":"Every Year's Popularity for Each Channel",
-    "width": 500,
-    "height": 400,
-    "data": {"url": "https://raw.githubusercontent.com/hngg0023/3179-HW3/main/Global_YouTube_Statistics.csv"},
-    "selection":{ 
-      "continent_highlight":{
-        "type":"multi",
-        "field": ["Year"],
-        "bind":"legend"
-      }
-    },
-    "mark": "bar",
-    "encoding": {
-      "x": {"aggregate": "sum", "field": "video_views", "title":"Total Video Views"}, 
-      "y": {"field": "channel_type", "title":""},
-      "color":{"field":"created_year"},
-    "tooltip":[
-      {"field":"created_year", "type": "ordinal", "title":"Year"},
-      {"field":"video_views", "type": "quantitative", "format":","},
-      {"field":"channel_type", "type": "nominal"}
-    ]},
-    "opacity": {
-    "condition": {"selection": "continent_highlight", "value": 0.6},
-    "value": 0.2
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Every Year's Popularity for Each Channel",
+  "width": 500,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/hngg0023/3179-HW3/main/Global_YouTube_Statistics.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "y": {"aggregate": "sum", "field": "video_views", "title": "Total Video Views", "type": "quantitative"},
+    "color": {"field": "channel_type", "title": "Channel Type"},
+    "x": {"field": "created_year", "type": "ordinal"},
+    "tooltip": [
+      {"field": "created_year", "type": "ordinal", "title": "Year"},
+      {"field": "channel_type", "type": "nominal", "title": "Channel Type"},
+      {"field": "video_views", "aggregate": "sum", "type": "quantitative", "format": ","}
+    ],
+    "order": {"aggregate": "sum", "field": "video_views", "type": "quantitative", "sort": "descending"}
   }
-  }
+}
     

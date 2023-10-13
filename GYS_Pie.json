@@ -1,0 +1,18 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Total Money Earned in Each Channel",
+    "width": 800,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/hngg0023/3179-HW3/main/Global_YouTube_Statistics.csv"
+    },
+    "transform": [
+      {"aggregate": [{"op": "sum", "field": "highest_yearly_earnings", "as": "Money_Earned"}],
+       "groupby": ["channel_type"]}
+    ],
+    "mark": {"type": "arc", "innerRadius": 30, "tooltip": true},
+    "encoding": {
+      "theta": {"field": "Money_Earned", "type": "quantitative"},
+      "color": {"field": "channel_type", "type": "nominal"}
+    }
+  }
